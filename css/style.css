@@ -1,0 +1,141 @@
+:root{
+  font-family: 'Karla', sans-serif;
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+li{
+  list-style: none;
+}
+
+.main{
+  width: 85%;
+  max-width: 340px;
+  margin: 4em auto;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+}
+
+.main__card{
+  padding: 1.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  color: #fff;
+}
+
+.main__card:first-child{
+  background-color: #fff;
+  color: var(--grayish-blue);
+}
+
+.card__title{
+  color: var(--cyan);
+  font-size: 1.3rem;
+}
+
+.card__subtitle{
+  color: var(--bright-yellow);
+  font-size: 1rem;
+}
+
+.card__description{
+  line-height: 1.8;
+  font-size: 0.9rem;
+  word-spacing: 3px;
+}
+
+.main__card:nth-child(2){
+  background-color: var(--cyan);
+  gap: 0.7em;
+}
+
+.card__price{
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card__price span{
+  font-size: 1rem;
+  color: rgba(256, 256, 256, 40%);
+  font-weight: 400;
+}
+
+.card__time{
+  margin-bottom: 1.2em;
+}
+
+.card__link{
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--bright-yellow);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 0.8em;
+}
+
+.main__card:last-child{
+  background-color: #2ab2b0c7;
+}
+
+@media screen and (min-width: 640px) {
+  .main{
+    min-width: 50%;
+    max-width: 520px;
+    flex-flow: row wrap;
+  }
+
+  .main__card:first-child{
+    flex-grow: 2;
+  }
+
+  .main__card:nth-child(2){
+    flex-grow: 1;
+  }
+
+  .main__card:last-child{
+    flex-grow: 1;
+  }
+
+  .card__link:hover{
+    animation: link 800ms infinite;
+    animation-delay: 300ms;
+  }
+
+  @keyframes link{
+    50%{
+      transform: scale(1.02);
+      transform: translateY(-5px);
+    }
+  }
+}
